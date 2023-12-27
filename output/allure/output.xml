@@ -1,0 +1,1003 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.9 on win32)" generated="20231227 23:17:33.812" rpa="false" schemaversion="4">
+<suite id="s1" name="Test Verify Teachers Section" source="C:\Users\Hafiz Muhammad\PycharmProjects\Eddie_robotframework_teacher_section\testcases\test_verify_teachers_section.robot">
+<test id="s1-t1" name="test_teacher_dashboard.py Link" line="25">
+<kw name="Open Chrome Browser With URL" library="GenericPage" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${base_url}</arg>
+<arg>${browser_name}</arg>
+<arg>options=add_argument("--start-maximized"); add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231227 23:17:34.615" level="INFO">Opening browser 'Chrome' to base url 'http://app-qa.nykey.org/'.</msg>
+<status status="PASS" starttime="20231227 23:17:34.612" endtime="20231227 23:17:40.075"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:17:42.093" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231227 23:17:40.078" endtime="20231227 23:17:42.093"/>
+</kw>
+<status status="PASS" starttime="20231227 23:17:34.611" endtime="20231227 23:17:42.122"/>
+</kw>
+<kw name="Enter Email Id and Password to Login" library="GenericPage">
+<arg>${username}</arg>
+<arg>${valid_password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username}</arg>
+<arg>dashboard@nykey.org</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 23:17:42.125" level="INFO">Typing text 'dashboard@nykey.org' into text field '//input[@id='email']'.</msg>
+<status status="PASS" starttime="20231227 23:17:42.123" endtime="20231227 23:17:42.289"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${valid_password}</arg>
+<arg>12345678</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 23:17:42.291" level="INFO">Typing password into text field '//input[@id='password']'.</msg>
+<msg timestamp="20231227 23:17:42.334" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20231227 23:17:42.407" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231227 23:17:42.290" endtime="20231227 23:17:42.407"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231227 23:17:42.414" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20231227 23:17:42.408" endtime="20231227 23:17:42.423"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:17:44.441" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231227 23:17:42.425" endtime="20231227 23:17:44.441"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login_remember_me_toggle}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 23:17:44.443" level="INFO">Clicking element '//input[@id='flexSwitchCheckChecked']'.</msg>
+<status status="PASS" starttime="20231227 23:17:44.443" endtime="20231227 23:17:44.502"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${click_login_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 23:17:44.505" level="INFO">Clicking element 'xpath=//button[normalize-space()='Sign in']'.</msg>
+<status status="PASS" starttime="20231227 23:17:44.504" endtime="20231227 23:17:49.085"/>
+</kw>
+<status status="PASS" starttime="20231227 23:17:42.123" endtime="20231227 23:17:49.086"/>
+</kw>
+<kw name="Verify User Successfully Logged In">
+<kw name="Get Location" library="SeleniumLibrary">
+<var>${current_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20231227 23:17:49.099" level="INFO">${current_url} = https://app-qa.nykey.org/home</msg>
+<status status="PASS" starttime="20231227 23:17:49.088" endtime="20231227 23:17:49.099"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${current_url}</arg>
+<arg>/home</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20231227 23:17:49.101" endtime="20231227 23:17:49.101"/>
+</kw>
+<status status="PASS" starttime="20231227 23:17:49.088" endtime="20231227 23:17:49.102"/>
+</kw>
+<kw name="Verify Link and Success Block Element of the page">
+<arg>https://app-qa.nykey.org/home/teachers</arg>
+<arg>Sun</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url_to_verify}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20231227 23:17:49.104" level="INFO">Opening url 'https://app-qa.nykey.org/home/teachers'</msg>
+<status status="PASS" starttime="20231227 23:17:49.104" endtime="20231227 23:17:50.419"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:17:52.425" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231227 23:17:50.421" endtime="20231227 23:17:52.425"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${success_block_element_to_verify}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231227 23:17:52.426" endtime="20231227 23:17:52.444"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${success_block_element_to_verify}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231227 23:17:52.461" level="INFO">Current page contains text 'Sun'.</msg>
+<status status="PASS" starttime="20231227 23:17:52.445" endtime="20231227 23:17:52.461"/>
+</kw>
+<status status="PASS" starttime="20231227 23:17:49.103" endtime="20231227 23:17:52.462"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:17:55.468" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231227 23:17:52.463" endtime="20231227 23:17:55.469"/>
+</kw>
+<kw name="Close Browser Session" library="GenericPage" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231227 23:17:55.495" endtime="20231227 23:17:57.699"/>
+</kw>
+<status status="PASS" starttime="20231227 23:17:55.494" endtime="20231227 23:17:57.700"/>
+</kw>
+<status status="PASS" starttime="20231227 23:17:34.608" endtime="20231227 23:17:57.701"/>
+</test>
+<test id="s1-t2" name="test_teacher_active_courses.py Link" line="33">
+<kw name="Open Chrome Browser With URL" library="GenericPage" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${base_url}</arg>
+<arg>${browser_name}</arg>
+<arg>options=add_argument("--start-maximized"); add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231227 23:17:57.708" level="INFO">Opening browser 'Chrome' to base url 'http://app-qa.nykey.org/'.</msg>
+<status status="PASS" starttime="20231227 23:17:57.707" endtime="20231227 23:18:02.725"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:18:04.745" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231227 23:18:02.730" endtime="20231227 23:18:04.745"/>
+</kw>
+<status status="PASS" starttime="20231227 23:17:57.706" endtime="20231227 23:18:04.747"/>
+</kw>
+<kw name="Enter Email Id and Password to Login" library="GenericPage">
+<arg>${username}</arg>
+<arg>${valid_password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username}</arg>
+<arg>dashboard@nykey.org</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 23:18:04.752" level="INFO">Typing text 'dashboard@nykey.org' into text field '//input[@id='email']'.</msg>
+<status status="PASS" starttime="20231227 23:18:04.750" endtime="20231227 23:18:04.937"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${valid_password}</arg>
+<arg>12345678</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 23:18:04.940" level="INFO">Typing password into text field '//input[@id='password']'.</msg>
+<msg timestamp="20231227 23:18:05.001" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20231227 23:18:05.075" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231227 23:18:04.939" endtime="20231227 23:18:05.076"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231227 23:18:05.080" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20231227 23:18:05.078" endtime="20231227 23:18:05.089"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:18:07.096" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231227 23:18:05.091" endtime="20231227 23:18:07.096"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login_remember_me_toggle}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 23:18:07.099" level="INFO">Clicking element '//input[@id='flexSwitchCheckChecked']'.</msg>
+<status status="PASS" starttime="20231227 23:18:07.098" endtime="20231227 23:18:07.167"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${click_login_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 23:18:07.170" level="INFO">Clicking element 'xpath=//button[normalize-space()='Sign in']'.</msg>
+<status status="PASS" starttime="20231227 23:18:07.169" endtime="20231227 23:18:11.794"/>
+</kw>
+<status status="PASS" starttime="20231227 23:18:04.749" endtime="20231227 23:18:11.799"/>
+</kw>
+<kw name="Verify User Successfully Logged In">
+<kw name="Get Location" library="SeleniumLibrary">
+<var>${current_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20231227 23:18:11.864" level="INFO">${current_url} = https://app-qa.nykey.org/home</msg>
+<status status="PASS" starttime="20231227 23:18:11.812" endtime="20231227 23:18:11.864"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${current_url}</arg>
+<arg>/home</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20231227 23:18:11.869" endtime="20231227 23:18:11.870"/>
+</kw>
+<status status="PASS" starttime="20231227 23:18:11.810" endtime="20231227 23:18:11.872"/>
+</kw>
+<kw name="Verify Link and Success Block Element of the page">
+<arg>https://app-qa.nykey.org/teachers/0/course</arg>
+<arg>Active Courses</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url_to_verify}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20231227 23:18:11.878" level="INFO">Opening url 'https://app-qa.nykey.org/teachers/0/course'</msg>
+<status status="PASS" starttime="20231227 23:18:11.875" endtime="20231227 23:18:13.377"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:18:15.392" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231227 23:18:13.382" endtime="20231227 23:18:15.392"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${success_block_element_to_verify}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231227 23:18:15.395" endtime="20231227 23:18:15.431"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${success_block_element_to_verify}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231227 23:18:15.481" level="INFO">Current page contains text 'Active Courses'.</msg>
+<status status="PASS" starttime="20231227 23:18:15.432" endtime="20231227 23:18:15.481"/>
+</kw>
+<status status="PASS" starttime="20231227 23:18:11.873" endtime="20231227 23:18:15.483"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:18:18.497" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231227 23:18:15.485" endtime="20231227 23:18:18.497"/>
+</kw>
+<kw name="Close Browser Session" library="GenericPage" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231227 23:18:18.500" endtime="20231227 23:18:20.824"/>
+</kw>
+<status status="PASS" starttime="20231227 23:18:18.499" endtime="20231227 23:18:20.825"/>
+</kw>
+<status status="PASS" starttime="20231227 23:17:57.706" endtime="20231227 23:18:20.826"/>
+</test>
+<test id="s1-t3" name="test_teacher_add_course.py Link" line="41">
+<kw name="Open Chrome Browser With URL" library="GenericPage" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${base_url}</arg>
+<arg>${browser_name}</arg>
+<arg>options=add_argument("--start-maximized"); add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231227 23:18:20.835" level="INFO">Opening browser 'Chrome' to base url 'http://app-qa.nykey.org/'.</msg>
+<status status="PASS" starttime="20231227 23:18:20.834" endtime="20231227 23:18:31.861"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:18:33.869" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231227 23:18:31.864" endtime="20231227 23:18:33.869"/>
+</kw>
+<status status="PASS" starttime="20231227 23:18:20.833" endtime="20231227 23:18:33.871"/>
+</kw>
+<kw name="Enter Email Id and Password to Login" library="GenericPage">
+<arg>${username}</arg>
+<arg>${valid_password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username}</arg>
+<arg>dashboard@nykey.org</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 23:18:33.873" level="INFO">Typing text 'dashboard@nykey.org' into text field '//input[@id='email']'.</msg>
+<status status="PASS" starttime="20231227 23:18:33.872" endtime="20231227 23:18:34.041"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${valid_password}</arg>
+<arg>12345678</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 23:18:34.044" level="INFO">Typing password into text field '//input[@id='password']'.</msg>
+<msg timestamp="20231227 23:18:34.105" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20231227 23:18:34.185" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231227 23:18:34.043" endtime="20231227 23:18:34.185"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231227 23:18:34.188" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20231227 23:18:34.186" endtime="20231227 23:18:34.196"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:18:36.200" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231227 23:18:34.199" endtime="20231227 23:18:36.200"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login_remember_me_toggle}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 23:18:36.202" level="INFO">Clicking element '//input[@id='flexSwitchCheckChecked']'.</msg>
+<status status="PASS" starttime="20231227 23:18:36.201" endtime="20231227 23:18:36.289"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${click_login_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 23:18:36.293" level="INFO">Clicking element 'xpath=//button[normalize-space()='Sign in']'.</msg>
+<status status="PASS" starttime="20231227 23:18:36.292" endtime="20231227 23:18:47.507"/>
+</kw>
+<status status="PASS" starttime="20231227 23:18:33.872" endtime="20231227 23:18:47.510"/>
+</kw>
+<kw name="Verify User Successfully Logged In">
+<kw name="Get Location" library="SeleniumLibrary">
+<var>${current_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20231227 23:18:47.529" level="INFO">${current_url} = https://app-qa.nykey.org/home</msg>
+<status status="PASS" starttime="20231227 23:18:47.514" endtime="20231227 23:18:47.529"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${current_url}</arg>
+<arg>/home</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20231227 23:18:47.533" endtime="20231227 23:18:47.534"/>
+</kw>
+<status status="PASS" starttime="20231227 23:18:47.512" endtime="20231227 23:18:47.535"/>
+</kw>
+<kw name="Verify Link and Success Block Element of the page">
+<arg>https://app-qa.nykey.org/assignments/create</arg>
+<arg>Add Assignment</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url_to_verify}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20231227 23:18:47.539" level="INFO">Opening url 'https://app-qa.nykey.org/assignments/create'</msg>
+<status status="PASS" starttime="20231227 23:18:47.538" endtime="20231227 23:18:50.992"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:18:53.010" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231227 23:18:50.995" endtime="20231227 23:18:53.011"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${success_block_element_to_verify}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<msg timestamp="20231227 23:18:58.240" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231227 23:18:58.241" level="FAIL">Text 'Add Assignment' did not appear in 5 seconds.</msg>
+<status status="FAIL" starttime="20231227 23:18:53.013" endtime="20231227 23:18:58.242"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${success_block_element_to_verify}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20231227 23:18:58.243" endtime="20231227 23:18:58.243"/>
+</kw>
+<status status="FAIL" starttime="20231227 23:18:47.537" endtime="20231227 23:18:58.244"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20231227 23:18:58.245" endtime="20231227 23:18:58.245"/>
+</kw>
+<kw name="Close Browser Session" library="GenericPage" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231227 23:18:58.248" endtime="20231227 23:19:00.524"/>
+</kw>
+<status status="PASS" starttime="20231227 23:18:58.247" endtime="20231227 23:19:00.525"/>
+</kw>
+<status status="FAIL" starttime="20231227 23:18:20.832" endtime="20231227 23:19:00.526">Text 'Add Assignment' did not appear in 5 seconds.</status>
+</test>
+<test id="s1-t4" name="test_teacher_assignments_list.py Link" line="49">
+<kw name="Open Chrome Browser With URL" library="GenericPage" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${base_url}</arg>
+<arg>${browser_name}</arg>
+<arg>options=add_argument("--start-maximized"); add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231227 23:19:00.534" level="INFO">Opening browser 'Chrome' to base url 'http://app-qa.nykey.org/'.</msg>
+<status status="PASS" starttime="20231227 23:19:00.533" endtime="20231227 23:19:07.136"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:19:09.154" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231227 23:19:07.139" endtime="20231227 23:19:09.154"/>
+</kw>
+<status status="PASS" starttime="20231227 23:19:00.533" endtime="20231227 23:19:09.155"/>
+</kw>
+<kw name="Enter Email Id and Password to Login" library="GenericPage">
+<arg>${username}</arg>
+<arg>${valid_password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username}</arg>
+<arg>dashboard@nykey.org</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 23:19:09.158" level="INFO">Typing text 'dashboard@nykey.org' into text field '//input[@id='email']'.</msg>
+<status status="PASS" starttime="20231227 23:19:09.157" endtime="20231227 23:19:09.320"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${valid_password}</arg>
+<arg>12345678</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 23:19:09.323" level="INFO">Typing password into text field '//input[@id='password']'.</msg>
+<msg timestamp="20231227 23:19:09.371" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20231227 23:19:09.449" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231227 23:19:09.322" endtime="20231227 23:19:09.449"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231227 23:19:09.452" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20231227 23:19:09.451" endtime="20231227 23:19:09.459"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:19:11.471" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231227 23:19:09.461" endtime="20231227 23:19:11.471"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login_remember_me_toggle}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 23:19:11.474" level="INFO">Clicking element '//input[@id='flexSwitchCheckChecked']'.</msg>
+<status status="PASS" starttime="20231227 23:19:11.473" endtime="20231227 23:19:11.536"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${click_login_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 23:19:11.538" level="INFO">Clicking element 'xpath=//button[normalize-space()='Sign in']'.</msg>
+<status status="PASS" starttime="20231227 23:19:11.537" endtime="20231227 23:19:20.155"/>
+</kw>
+<status status="PASS" starttime="20231227 23:19:09.156" endtime="20231227 23:19:20.156"/>
+</kw>
+<kw name="Verify User Successfully Logged In">
+<kw name="Get Location" library="SeleniumLibrary">
+<var>${current_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20231227 23:19:20.168" level="INFO">${current_url} = https://app-qa.nykey.org/home</msg>
+<status status="PASS" starttime="20231227 23:19:20.157" endtime="20231227 23:19:20.168"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${current_url}</arg>
+<arg>/home</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20231227 23:19:20.169" endtime="20231227 23:19:20.170"/>
+</kw>
+<status status="PASS" starttime="20231227 23:19:20.157" endtime="20231227 23:19:20.170"/>
+</kw>
+<kw name="Verify Link and Success Block Element of the page">
+<arg>https://app-qa.nykey.org/assignments</arg>
+<arg>Assignment List</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url_to_verify}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20231227 23:19:20.172" level="INFO">Opening url 'https://app-qa.nykey.org/assignments'</msg>
+<status status="PASS" starttime="20231227 23:19:20.171" endtime="20231227 23:19:21.945"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:19:23.951" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231227 23:19:21.947" endtime="20231227 23:19:23.951"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${success_block_element_to_verify}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231227 23:19:23.952" endtime="20231227 23:19:23.973"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${success_block_element_to_verify}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231227 23:19:23.987" level="INFO">Current page contains text 'Assignment List'.</msg>
+<status status="PASS" starttime="20231227 23:19:23.974" endtime="20231227 23:19:23.987"/>
+</kw>
+<status status="PASS" starttime="20231227 23:19:20.171" endtime="20231227 23:19:23.989"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:19:27.004" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231227 23:19:23.989" endtime="20231227 23:19:27.004"/>
+</kw>
+<kw name="Close Browser Session" library="GenericPage" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231227 23:19:27.007" endtime="20231227 23:19:29.207"/>
+</kw>
+<status status="PASS" starttime="20231227 23:19:27.006" endtime="20231227 23:19:29.208"/>
+</kw>
+<status status="PASS" starttime="20231227 23:19:00.532" endtime="20231227 23:19:29.209"/>
+</test>
+<test id="s1-t5" name="test_teacher_feedback.py Link" line="57">
+<kw name="Open Chrome Browser With URL" library="GenericPage" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${base_url}</arg>
+<arg>${browser_name}</arg>
+<arg>options=add_argument("--start-maximized"); add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231227 23:19:29.217" level="INFO">Opening browser 'Chrome' to base url 'http://app-qa.nykey.org/'.</msg>
+<status status="PASS" starttime="20231227 23:19:29.216" endtime="20231227 23:19:36.184"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:19:38.201" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231227 23:19:36.185" endtime="20231227 23:19:38.202"/>
+</kw>
+<status status="PASS" starttime="20231227 23:19:29.216" endtime="20231227 23:19:38.204"/>
+</kw>
+<kw name="Enter Email Id and Password to Login" library="GenericPage">
+<arg>${username}</arg>
+<arg>${valid_password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username}</arg>
+<arg>dashboard@nykey.org</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 23:19:38.206" level="INFO">Typing text 'dashboard@nykey.org' into text field '//input[@id='email']'.</msg>
+<status status="PASS" starttime="20231227 23:19:38.205" endtime="20231227 23:19:38.362"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${valid_password}</arg>
+<arg>12345678</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 23:19:38.364" level="INFO">Typing password into text field '//input[@id='password']'.</msg>
+<msg timestamp="20231227 23:19:38.405" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20231227 23:19:38.477" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231227 23:19:38.363" endtime="20231227 23:19:38.477"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231227 23:19:38.481" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20231227 23:19:38.479" endtime="20231227 23:19:38.492"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:19:40.509" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231227 23:19:38.494" endtime="20231227 23:19:40.509"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login_remember_me_toggle}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 23:19:40.512" level="INFO">Clicking element '//input[@id='flexSwitchCheckChecked']'.</msg>
+<status status="PASS" starttime="20231227 23:19:40.511" endtime="20231227 23:19:40.575"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${click_login_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 23:19:40.579" level="INFO">Clicking element 'xpath=//button[normalize-space()='Sign in']'.</msg>
+<status status="PASS" starttime="20231227 23:19:40.577" endtime="20231227 23:20:22.856"/>
+</kw>
+<status status="PASS" starttime="20231227 23:19:38.205" endtime="20231227 23:20:22.858"/>
+</kw>
+<kw name="Verify User Successfully Logged In">
+<kw name="Get Location" library="SeleniumLibrary">
+<var>${current_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20231227 23:20:22.883" level="INFO">${current_url} = https://app-qa.nykey.org/home</msg>
+<status status="PASS" starttime="20231227 23:20:22.863" endtime="20231227 23:20:22.883"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${current_url}</arg>
+<arg>/home</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20231227 23:20:22.888" endtime="20231227 23:20:22.892"/>
+</kw>
+<status status="PASS" starttime="20231227 23:20:22.861" endtime="20231227 23:20:22.894"/>
+</kw>
+<kw name="Verify Link and Success Block Element of the page">
+<arg>https://app-qa.nykey.org/feedbacks/students/all</arg>
+<arg>Feedback</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url_to_verify}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20231227 23:20:22.900" level="INFO">Opening url 'https://app-qa.nykey.org/feedbacks/students/all'</msg>
+<status status="PASS" starttime="20231227 23:20:22.898" endtime="20231227 23:20:26.671"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:20:28.684" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231227 23:20:26.673" endtime="20231227 23:20:28.684"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${success_block_element_to_verify}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<msg timestamp="20231227 23:20:34.141" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231227 23:20:34.141" level="FAIL">Text 'Feedback' did not appear in 5 seconds.</msg>
+<status status="FAIL" starttime="20231227 23:20:28.716" endtime="20231227 23:20:34.143"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${success_block_element_to_verify}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20231227 23:20:34.145" endtime="20231227 23:20:34.145"/>
+</kw>
+<status status="FAIL" starttime="20231227 23:20:22.896" endtime="20231227 23:20:34.146"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20231227 23:20:34.147" endtime="20231227 23:20:34.148"/>
+</kw>
+<kw name="Close Browser Session" library="GenericPage" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231227 23:20:34.151" endtime="20231227 23:20:36.483"/>
+</kw>
+<status status="PASS" starttime="20231227 23:20:34.149" endtime="20231227 23:20:36.484"/>
+</kw>
+<status status="FAIL" starttime="20231227 23:19:29.215" endtime="20231227 23:20:36.485">Text 'Feedback' did not appear in 5 seconds.</status>
+</test>
+<test id="s1-t6" name="test_teacher_ptm_meeting.py Link" line="65">
+<kw name="Open Chrome Browser With URL" library="GenericPage" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${base_url}</arg>
+<arg>${browser_name}</arg>
+<arg>options=add_argument("--start-maximized"); add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231227 23:20:36.495" level="INFO">Opening browser 'Chrome' to base url 'http://app-qa.nykey.org/'.</msg>
+<status status="PASS" starttime="20231227 23:20:36.493" endtime="20231227 23:20:43.421"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:20:45.436" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231227 23:20:43.430" endtime="20231227 23:20:45.436"/>
+</kw>
+<status status="PASS" starttime="20231227 23:20:36.492" endtime="20231227 23:20:45.436"/>
+</kw>
+<kw name="Enter Email Id and Password to Login" library="GenericPage">
+<arg>${username}</arg>
+<arg>${valid_password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username}</arg>
+<arg>dashboard@nykey.org</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 23:20:45.439" level="INFO">Typing text 'dashboard@nykey.org' into text field '//input[@id='email']'.</msg>
+<status status="PASS" starttime="20231227 23:20:45.438" endtime="20231227 23:20:45.599"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${valid_password}</arg>
+<arg>12345678</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 23:20:45.601" level="INFO">Typing password into text field '//input[@id='password']'.</msg>
+<msg timestamp="20231227 23:20:45.647" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20231227 23:20:45.717" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231227 23:20:45.600" endtime="20231227 23:20:45.717"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231227 23:20:45.719" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20231227 23:20:45.719" endtime="20231227 23:20:45.728"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:20:47.738" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231227 23:20:45.730" endtime="20231227 23:20:47.738"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login_remember_me_toggle}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 23:20:47.741" level="INFO">Clicking element '//input[@id='flexSwitchCheckChecked']'.</msg>
+<status status="PASS" starttime="20231227 23:20:47.740" endtime="20231227 23:20:47.805"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${click_login_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 23:20:47.807" level="INFO">Clicking element 'xpath=//button[normalize-space()='Sign in']'.</msg>
+<status status="PASS" starttime="20231227 23:20:47.807" endtime="20231227 23:20:52.885"/>
+</kw>
+<status status="PASS" starttime="20231227 23:20:45.438" endtime="20231227 23:20:52.887"/>
+</kw>
+<kw name="Verify User Successfully Logged In">
+<kw name="Get Location" library="SeleniumLibrary">
+<var>${current_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20231227 23:20:52.904" level="INFO">${current_url} = https://app-qa.nykey.org/home</msg>
+<status status="PASS" starttime="20231227 23:20:52.888" endtime="20231227 23:20:52.904"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${current_url}</arg>
+<arg>/home</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20231227 23:20:52.905" endtime="20231227 23:20:52.906"/>
+</kw>
+<status status="PASS" starttime="20231227 23:20:52.888" endtime="20231227 23:20:52.907"/>
+</kw>
+<kw name="Verify Link and Success Block Element of the page">
+<arg>https://app-qa.nykey.org/pt_meeting</arg>
+<arg>Parent &amp; Teacher Meeting</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url_to_verify}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20231227 23:20:52.911" level="INFO">Opening url 'https://app-qa.nykey.org/pt_meeting'</msg>
+<status status="PASS" starttime="20231227 23:20:52.910" endtime="20231227 23:20:53.808"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:20:55.825" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231227 23:20:53.810" endtime="20231227 23:20:55.826"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${success_block_element_to_verify}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231227 23:20:55.827" endtime="20231227 23:20:55.845"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${success_block_element_to_verify}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231227 23:20:55.861" level="INFO">Current page contains text 'Parent &amp; Teacher Meeting'.</msg>
+<status status="PASS" starttime="20231227 23:20:55.845" endtime="20231227 23:20:55.861"/>
+</kw>
+<status status="PASS" starttime="20231227 23:20:52.908" endtime="20231227 23:20:55.862"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:20:58.865" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231227 23:20:55.863" endtime="20231227 23:20:58.865"/>
+</kw>
+<kw name="Close Browser Session" library="GenericPage" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231227 23:20:58.867" endtime="20231227 23:21:01.118"/>
+</kw>
+<status status="PASS" starttime="20231227 23:20:58.867" endtime="20231227 23:21:01.119"/>
+</kw>
+<status status="PASS" starttime="20231227 23:20:36.491" endtime="20231227 23:21:01.120"/>
+</test>
+<test id="s1-t7" name="test_teacher_reschedule_requests.py Link" line="73">
+<kw name="Open Chrome Browser With URL" library="GenericPage" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${base_url}</arg>
+<arg>${browser_name}</arg>
+<arg>options=add_argument("--start-maximized"); add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231227 23:21:01.128" level="INFO">Opening browser 'Chrome' to base url 'http://app-qa.nykey.org/'.</msg>
+<status status="PASS" starttime="20231227 23:21:01.127" endtime="20231227 23:21:05.918"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:21:07.922" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231227 23:21:05.919" endtime="20231227 23:21:07.922"/>
+</kw>
+<status status="PASS" starttime="20231227 23:21:01.127" endtime="20231227 23:21:07.924"/>
+</kw>
+<kw name="Enter Email Id and Password to Login" library="GenericPage">
+<arg>${username}</arg>
+<arg>${valid_password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username}</arg>
+<arg>dashboard@nykey.org</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 23:21:07.927" level="INFO">Typing text 'dashboard@nykey.org' into text field '//input[@id='email']'.</msg>
+<status status="PASS" starttime="20231227 23:21:07.926" endtime="20231227 23:21:08.087"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${valid_password}</arg>
+<arg>12345678</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 23:21:08.089" level="INFO">Typing password into text field '//input[@id='password']'.</msg>
+<msg timestamp="20231227 23:21:08.135" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20231227 23:21:08.202" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231227 23:21:08.088" endtime="20231227 23:21:08.202"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231227 23:21:08.205" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20231227 23:21:08.204" endtime="20231227 23:21:08.214"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:21:10.225" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231227 23:21:08.216" endtime="20231227 23:21:10.226"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login_remember_me_toggle}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 23:21:10.228" level="INFO">Clicking element '//input[@id='flexSwitchCheckChecked']'.</msg>
+<status status="PASS" starttime="20231227 23:21:10.227" endtime="20231227 23:21:10.287"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${click_login_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 23:21:10.290" level="INFO">Clicking element 'xpath=//button[normalize-space()='Sign in']'.</msg>
+<status status="PASS" starttime="20231227 23:21:10.289" endtime="20231227 23:21:15.315"/>
+</kw>
+<status status="PASS" starttime="20231227 23:21:07.926" endtime="20231227 23:21:15.317"/>
+</kw>
+<kw name="Verify User Successfully Logged In">
+<kw name="Get Location" library="SeleniumLibrary">
+<var>${current_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20231227 23:21:15.330" level="INFO">${current_url} = https://app-qa.nykey.org/home</msg>
+<status status="PASS" starttime="20231227 23:21:15.319" endtime="20231227 23:21:15.330"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${current_url}</arg>
+<arg>/home</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20231227 23:21:15.332" endtime="20231227 23:21:15.332"/>
+</kw>
+<status status="PASS" starttime="20231227 23:21:15.318" endtime="20231227 23:21:15.333"/>
+</kw>
+<kw name="Verify Link and Success Block Element of the page">
+<arg>https://app-qa.nykey.org/teacher/reschedule/requests</arg>
+<arg>Reschedule Requests</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url_to_verify}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20231227 23:21:15.335" level="INFO">Opening url 'https://app-qa.nykey.org/teacher/reschedule/requests'</msg>
+<status status="PASS" starttime="20231227 23:21:15.335" endtime="20231227 23:21:16.538"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:21:18.551" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231227 23:21:16.539" endtime="20231227 23:21:18.552"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${success_block_element_to_verify}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231227 23:21:18.553" endtime="20231227 23:21:18.570"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${success_block_element_to_verify}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231227 23:21:18.585" level="INFO">Current page contains text 'Reschedule Requests'.</msg>
+<status status="PASS" starttime="20231227 23:21:18.571" endtime="20231227 23:21:18.585"/>
+</kw>
+<status status="PASS" starttime="20231227 23:21:15.334" endtime="20231227 23:21:18.608"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:21:21.610" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231227 23:21:18.609" endtime="20231227 23:21:21.610"/>
+</kw>
+<kw name="Close Browser Session" library="GenericPage" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231227 23:21:21.612" endtime="20231227 23:21:23.859"/>
+</kw>
+<status status="PASS" starttime="20231227 23:21:21.612" endtime="20231227 23:21:23.860"/>
+</kw>
+<status status="PASS" starttime="20231227 23:21:01.126" endtime="20231227 23:21:23.861"/>
+</test>
+<test id="s1-t8" name="test_teacher_timesheet.py Link" line="81">
+<kw name="Open Chrome Browser With URL" library="GenericPage" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${base_url}</arg>
+<arg>${browser_name}</arg>
+<arg>options=add_argument("--start-maximized"); add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231227 23:21:23.869" level="INFO">Opening browser 'Chrome' to base url 'http://app-qa.nykey.org/'.</msg>
+<status status="PASS" starttime="20231227 23:21:23.868" endtime="20231227 23:21:28.200"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:21:30.203" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231227 23:21:28.202" endtime="20231227 23:21:30.203"/>
+</kw>
+<status status="PASS" starttime="20231227 23:21:23.867" endtime="20231227 23:21:30.205"/>
+</kw>
+<kw name="Enter Email Id and Password to Login" library="GenericPage">
+<arg>${username}</arg>
+<arg>${valid_password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username}</arg>
+<arg>dashboard@nykey.org</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 23:21:30.208" level="INFO">Typing text 'dashboard@nykey.org' into text field '//input[@id='email']'.</msg>
+<status status="PASS" starttime="20231227 23:21:30.207" endtime="20231227 23:21:30.415"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${valid_password}</arg>
+<arg>12345678</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20231227 23:21:30.417" level="INFO">Typing password into text field '//input[@id='password']'.</msg>
+<msg timestamp="20231227 23:21:30.468" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20231227 23:21:30.552" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231227 23:21:30.416" endtime="20231227 23:21:30.552"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231227 23:21:30.555" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20231227 23:21:30.554" endtime="20231227 23:21:30.564"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:21:32.567" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231227 23:21:30.566" endtime="20231227 23:21:32.567"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login_remember_me_toggle}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 23:21:32.569" level="INFO">Clicking element '//input[@id='flexSwitchCheckChecked']'.</msg>
+<status status="PASS" starttime="20231227 23:21:32.568" endtime="20231227 23:21:32.629"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${click_login_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231227 23:21:32.632" level="INFO">Clicking element 'xpath=//button[normalize-space()='Sign in']'.</msg>
+<status status="PASS" starttime="20231227 23:21:32.631" endtime="20231227 23:21:37.589"/>
+</kw>
+<status status="PASS" starttime="20231227 23:21:30.206" endtime="20231227 23:21:37.592"/>
+</kw>
+<kw name="Verify User Successfully Logged In">
+<kw name="Get Location" library="SeleniumLibrary">
+<var>${current_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20231227 23:21:37.630" level="INFO">${current_url} = https://app-qa.nykey.org/home</msg>
+<status status="PASS" starttime="20231227 23:21:37.602" endtime="20231227 23:21:37.630"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${current_url}</arg>
+<arg>/home</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20231227 23:21:37.632" endtime="20231227 23:21:37.633"/>
+</kw>
+<status status="PASS" starttime="20231227 23:21:37.601" endtime="20231227 23:21:37.633"/>
+</kw>
+<kw name="Verify Link and Success Block Element of the page">
+<arg>https://app-qa.nykey.org/timesheet</arg>
+<arg>Timesheet</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url_to_verify}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20231227 23:21:37.636" level="INFO">Opening url 'https://app-qa.nykey.org/timesheet'</msg>
+<status status="PASS" starttime="20231227 23:21:37.635" endtime="20231227 23:21:38.654"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:21:40.672" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20231227 23:21:38.656" endtime="20231227 23:21:40.672"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${success_block_element_to_verify}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231227 23:21:40.674" endtime="20231227 23:21:40.693"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${success_block_element_to_verify}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231227 23:21:40.709" level="INFO">Current page contains text 'Timesheet'.</msg>
+<status status="PASS" starttime="20231227 23:21:40.694" endtime="20231227 23:21:40.709"/>
+</kw>
+<status status="PASS" starttime="20231227 23:21:37.634" endtime="20231227 23:21:40.710"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231227 23:21:43.712" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231227 23:21:40.711" endtime="20231227 23:21:43.712"/>
+</kw>
+<kw name="Close Browser Session" library="GenericPage" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231227 23:21:43.715" endtime="20231227 23:21:45.979"/>
+</kw>
+<status status="PASS" starttime="20231227 23:21:43.714" endtime="20231227 23:21:45.980"/>
+</kw>
+<status status="PASS" starttime="20231227 23:21:23.866" endtime="20231227 23:21:45.980"/>
+</test>
+<doc>End to End Testing Flow</doc>
+<status status="FAIL" starttime="20231227 23:17:33.956" endtime="20231227 23:21:45.986"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="6" fail="2" skip="0" id="s1" name="Test Verify Teachers Section">Test Verify Teachers Section</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
