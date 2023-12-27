@@ -23,8 +23,8 @@ Open Chrome Browser With URL
 #    Go To    https://www.vconnectlive.com/
 
 
-      Open Browser        ${base_url}            ${browser_name}         options=add_argument("--start-maximized"); add_experimental_option("detach", True)
-#      Open Browser        ${base_url}             ${browser_name}         options=add_argument("--headless")        # For Jenkins Ubuntu Server
+#      Open Browser        ${base_url}            ${browser_name}         options=add_argument("--start-maximized"); add_experimental_option("detach", True)
+      Open Browser        ${base_url}             ${browser_name}         options=add_argument("--headless")        # For Jenkins Ubuntu Server
       Sleep               2
 
 #     Open Browser        ${base_url}            chrome                      executable_path=/home/ubuntu/chromedriver-download/chromedriver-linux64/chromedriver
